@@ -6,10 +6,19 @@
  * e.g.
  * greet("Hamza") logs "Hello Hamza"
  */
+
+
+/* The old sol.
 function greet(name) {
   console.log("Hello " + name );
 }
 greet("Ibraheem");
+*/
+
+// *new sol.
+const greet = (name) => console.log(`Hello ${name}`);
+greet("ali");
+
 
 /**
  * isOdd(n):
@@ -20,11 +29,19 @@ greet("Ibraheem");
  * isOdd(7) -> true
  * isOdd(10) -> false
  */
+
+/* old sol.
 function isOdd(n) {
   if(n%2 === 0) return false;
   return true;
 }
 isOdd(15);
+*/
+// *new sol.
+const isOdd = (n) => !(n%2 === 0);
+isOdd(15);
+
+
 
 /**
  * oddsSmallerThan(n):
@@ -35,10 +52,21 @@ isOdd(15);
  * oddsSmallerThan(7) -> 3
  * oddsSmallerThan(15) -> 7
  */
+
+/* old sol.
 function oddsSmallerThan(n) {
  if (n%2 !== 0)
   return ((n-1)/2);
 return (n/2); }
+*/
+
+// *new sol.
+const oddsSmallerThan = (n) => {
+
+  if(isOdd(n)) return ((n-1)/2)
+  return (n/2)
+
+}
 
 oddsSmallerThan(7);
 /**
@@ -51,11 +79,25 @@ oddsSmallerThan(7);
  * squareOrDouble(16) -> 32
  * squareOrDouble(9) -> 81
  */
+
+/* old sol.
 function squareOrDouble(n) {
   if (n%2 === 0)
   return (n*2);
   return (n*n); }
   
   squareOrDouble(15);
+  */
+
+// *new sol.
+const squareOrDouble = (n) => {
+ if(isOdd(n)) return n*n
+ return n*2
+}
+
+console.log(squareOrDouble(3)); 
+console.log(squareOrDouble(4)); 
+
+
 
 module.exports = { greet, isOdd, oddsSmallerThan, squareOrDouble };
